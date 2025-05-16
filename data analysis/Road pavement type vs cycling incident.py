@@ -10,7 +10,7 @@ import numpy as np
 
 # Read dataset in csv
 df = pd.read_csv(
-    r'C:\Users\ThinkBook\Desktop\netherlands\six4change-quant-data\csv tables\main_cycling_safety_netherlands.csv', low_memory=False)
+    r'C:\Users\ThinkBook\Desktop\netherlands\six4change-quant-data\data analysis', low_memory=False)
 
 # Drop unneeded columns
 columns_to_drop = ['Unnamed: 0', 'VKL_NUMMER', 'REGNUMMER', 'PVOPGEM', 'DATUM_VKL', 'DAG_CODE', 'MND_NUMMER', 'MNE_CODE',
