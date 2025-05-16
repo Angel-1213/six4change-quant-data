@@ -23,5 +23,5 @@ The horizontal bar illustrates the distribution of cycling incidents across pave
 The combined stacked bar and line graph illustrates how different pavement types influenced the number of cycling incidents in Amsterdam between 2004 and 2012. The results strongly support Hypothesis H C.b.3. Train/Tram Tracks exhibit a sharp decline by 80% in cycling incidents from 2008–2010, while Loose Surfaces & Gravel show a more stable and gradual reduction. This trend aligns with Amsterdam's targeted infrastructure improvements for high-risk pavements. These results validate our Machine Learning tool’s ability to prioritize high-risk lanes through hazard scoring, a strategy that can significantly improve Amsterdam’s cycling infrastructure by aligning repairs with observed improvement trends. --> hazardess identified by hyp 2 and is true bc its biggest decline
 
 - how is data gathered
-- how was analysis done
+- how was analysis done --> plotted existing data, categorised pavement types, categorised districts, 
 - why is it relevant
