@@ -1,0 +1,21 @@
+# Summary of columns used for data analysis
+
+-> JAAR_VKL: Year of the incident.
+
+-> BEBKOM: Indication whether the traffic incident inside or outside the built-up area took place:  
+BI → Inside Built-up Area — the incident happened within the urban or city limits, like in neighborhoods, streets, or city roads.
+BU → Outside Built-up Area — the incident took place outside of the main urban area, such as on highways, rural roads, or countryside locations.
+
+-> WVG_AN: Type of pavement.
+
+-> PVE_NAAM: Name of the province in which traffic incident occurred (in accordance with the BN current municipality classification and boundaries).
+
+-> WIK_NAAM: Name of the neighborhood.
+
+-> Latitude
+
+-> Longitude
+
+-> Injuries: if the people are injuried from the accident (Yes= at least one person is inquired, No=none is injuried)
+
+
