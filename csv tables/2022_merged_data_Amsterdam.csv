@@ -1,4 +1,0 @@
-Accident_ID,Party_Type,Province,Intersection_ID,Year,Main_Road_Type,Urban_Access_Road_Type,Residential_Road_Type,Intersection_Type,Road_Segment_Number,Pavement_Type,Surface_Type,Road_Structure_Type
-20220014445,SPEED PEDELEC,Noord-Holland,600144855.0,2022,N,J,N,K,600144855.0,FP,,P
-20220101313,SPEED PEDELEC,Noord-Holland,,2022,,,,,nan,,,G
-20220077061,SPEED PEDELEC,Noord-Holland,,2022,,,,,nan,,,G
