@@ -9,7 +9,7 @@ import seaborn as sns
 import pandas as pd
 
 # Running cycling dataset
-cycling_df = pd.read_csv('prediction_data.csv', low_memory=False)
+cycling_df = pd.read_csv('csv tables/prediction_data_cycling.csv', low_memory=False)
 
 # Selecting relevant columns from dataframe
 selected_columns = cycling_df[[
@@ -37,7 +37,7 @@ for col in cols_to_convert:
     selected_columns_english[col] = selected_columns_english[col].astype(int)
 
 # Save to csv
-selected_columns_english.to_csv('cycling.csv', index=False)
+selected_columns_english.to_csv('csv tables/cleaned_prediction_data_cycling.csv', index=False)
 
 # -----------------------------------------------------------------------------------------------------------------
 
@@ -46,7 +46,7 @@ selected_columns_english.to_csv('cycling.csv', index=False)
 # (1) Plotting bar graph with speed limit against number of accidents-- to compare the volume of crashes across types and limits
 
 # Rerun cleaned cycling dataframe
-cycling_df = pd.read_csv('cycling.csv', low_memory=False)
+cycling_df = pd.read_csv('csv tables/cleaned_prediction_data_cycling.csv', low_memory=False)
 
 # Get min and max
 min_speed = cycling_df['Speed limit'].min()
@@ -85,7 +85,7 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 
 # Save bar graph to folder
-plt.savefig('crash_counts_by_speed_limit_and_road_layout_type.png')
+plt.savefig('visualisations/crash_counts_by_speed_limit_and_road_layout_type.png')
 
 # (2) Run a statistical test using Poisson regression model
 
@@ -116,7 +116,7 @@ model = smf.glm(
 ).fit()
 
 # Save model summary to folder
-with open('model_summary.txt', 'w') as f:
+with open('data analysis/model_summary.txt', 'w') as f:
     f.write(model.summary().as_text())
 
 # (3) Plotting line graph with speed limit against number of accidents-- to demonstrate how the intersection types behave differently as speed increases (ex. road complexity)
@@ -150,7 +150,7 @@ plt.legend(title='Intersection Type')
 plt.grid(True)
 
 # Save line graph to folder
-plt.savefig('crash_counts_by_speed_limit.png')
+plt.savefig('visualisations/crash_counts_by_speed_limit.png')
 
 # -----------------------------------------------------------------------------------------------------------------
 
@@ -211,7 +211,7 @@ for ax in g.axes.flat:
 plt.tight_layout()
 
 # Save bar graph to folder
-plt.savefig('crash_counts_by_road_and_accident_type.png')
+plt.savefig('visualisations/crash_counts_by_road_and_accident_type.png')
 
 # (2) Running a One sided (Mann-Whitney U test)
 # Set a severity scale
