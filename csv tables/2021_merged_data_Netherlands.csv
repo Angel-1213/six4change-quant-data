@@ -1,7 +1,0 @@
-Accident_ID,Party_Type,Province,Intersection_ID,Year,Main_Road_Type,Urban_Access_Road_Type,Residential_Road_Type,Intersection_Type,Road_Segment_Number,Pavement_Type,Surface_Type,Road_Structure_Type
-20210039553,SPEED PEDELEC,Noord-Brabant,244209005,2021,N,J,N,K,244209005,,,
-20210049504,SPEED PEDELEC,Zuid-Holland,,2021,,,,,nan,,,G
-20210053988,SPEED PEDELEC,Noord-Brabant,298224227,2021,N,J,N,K,298224022,,,
-20210055684,SPEED PEDELEC,Gelderland,352290029,2021,N,J,N,K,352290029,,,
-20210064904,SPEED PEDELEC,Noord-Brabant,329172006,2021,N,J,N,K,329172006,,,
-20210089566,SPEED PEDELEC,Noord-Holland,281340008,2021,N,J,N,K,281340008,,,
