@@ -1,4 +1,4 @@
-**RQ C.b: "How do road pavement types and geospatial locations (inside or outside built-up areas), influence the number of cycling incidents in Amsterdam?**
+**RQ C.b: "How do road pavement types influence the number of cycling incidents in Amsterdam?**
 
 ![alt text](Cycling_Incidents_by_Netherlands_province.png)
 This study focuses on Amsterdam because the scope of the broader research is Amsterdam. In addition preliminary analysis of this dataset revealed it has the highest incidence of cycling accidents among Dutch districts, with over 30,000 recorded incidents, significantly surpassing other regions. This prevalence makes it a critical case study for urban cycling infrastructure challenges.

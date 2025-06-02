@@ -1,7 +1,7 @@
 ,coef,std err,t,P>|t|,[0.025,0.975]
-const,    3.2567,    0.273,   11.931, 0.000,    2.697,    3.817
-"Travel motives_Onderwijs volgen, cursus, kinderopvang",   -0.0667,    0.386,   -0.173, 0.864,   -0.859,    0.725
-Travel motives_Overige reismotieven,   -0.8827,    0.405,   -2.180, 0.038,   -1.713,   -0.052
-Travel motives_Van en naar het werk,    0.5173,    0.405,    1.278, 0.212,   -0.313,    1.348
-Travel motives_Vrije tijd,    0.5273,    0.405,    1.302, 0.204,   -0.303,    1.358
-"Travel motives_Winkelen, boodschappen doen",   -1.2717,    0.386,   -3.294, 0.003,   -2.064,   -0.480
+const,    2.4329,    0.117,   20.719, 0.000,    2.185,    2.681
+Travel motives_Commute to and from work,    1.2296,    0.293,    4.199, 0.001,    0.612,    1.847
+"Travel motives_Education, courses, childcare",    0.7231,    0.267,    2.707, 0.015,    0.160,    1.287
+Travel motives_Leisure,    0.9971,    0.293,    3.405, 0.003,    0.379,    1.615
+Travel motives_Other travel motives,   -0.0479,    0.293,   -0.164, 0.872,   -0.666,    0.570
+"Travel motives_Shopping, doing groceries",   -0.4689,    0.267,   -1.756, 0.097,   -1.032,    0.095
