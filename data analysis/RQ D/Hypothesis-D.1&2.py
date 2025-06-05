@@ -14,14 +14,12 @@ DATA_PATH = Path(
 CLEANED_DATA_PATH = Path(r"..\..\csv tables\cleaned_data_cycling.csv")
 OUTPUT_FOLDER_CSV = Path(
     r"..\..\csv tables")
-OUTPUT_FOLDER_VIS = Path(
-    r"..\..\visualisations\D1&2")
+OUTPUT_FOLDER_VIS_1 = Path(
+    r"..\..\visualisations\D.1")
+OUTPUT_FOLDER_VIS_2 = Path(
+    r"..\..\visualisations\D.2")
 
 # Step 1: DATA PREPROCESSING AND CLEANING OF ORIGINAL DATASET
-
-# Ensure output folders exist
-for folder in [OUTPUT_FOLDER_CSV, OUTPUT_FOLDER_VIS]:
-    folder.mkdir(parents=True, exist_ok=True)
 
 # Running cycling dataset
 cycling_df = pd.read_csv(DATA_PATH, low_memory=False)
@@ -124,7 +122,7 @@ for ax in g.axes.flat:
 plt.tight_layout()
 
 # Save grouped bar graph
-plot_path = OUTPUT_FOLDER_VIS / \
+plot_path = OUTPUT_FOLDER_VIS_1 / \
     "Proportion_of_cycling_accidents_by_pavement_type.png"
 plt.savefig(plot_path)
 
@@ -215,7 +213,7 @@ print(counts[['Severe', 'Total', 'Severity Ratio']])
 counts = cycling_df.groupby(
     ['Road Group', 'Accident Group']).size().unstack(fill_value=0)
 counts['Total'] = counts.sum(axis=1)
-counts_normalized = counts[['Injury', 'Death', 'Material damage']].div(
+counts_normalized = counts[['Death', 'Injury', 'Material damage']].div(
     counts['Total'], axis=0) * 100  # Convert to %
 
 # Define the exact color to plot stacked bar chart
@@ -259,6 +257,6 @@ for bar_index, (idx, row) in enumerate(counts_normalized.iterrows()):
 plt.tight_layout()
 
 # Save stacked bar graph
-plot_path = OUTPUT_FOLDER_VIS / \
+plot_path = OUTPUT_FOLDER_VIS_2 / \
     "Severity_of_accidents_by_road_type.png"
 plt.savefig(plot_path)
