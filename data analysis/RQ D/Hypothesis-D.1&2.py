@@ -2,17 +2,29 @@
 
 # Importing necessary libraries
 from scipy.stats import norm
+from pathlib import Path
 from statsmodels.stats.proportion import proportions_ztest
-from scipy.stats import mannwhitneyu
-import statsmodels.formula.api as smf
-import statsmodels.api as sm
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
+# Defining all paths
+DATA_PATH = Path(
+    r"..\..\csv tables\data_cycling.csv")
+CLEANED_DATA_PATH = Path(r"..\..\csv tables\cleaned_data_cycling.csv")
+OUTPUT_FOLDER_CSV = Path(
+    r"..\..\csv tables")
+OUTPUT_FOLDER_VIS = Path(
+    r"..\..\visualisations\D1&2")
+
+# Step 1: DATA PREPROCESSING AND CLEANING OF ORIGINAL DATASET
+
+# Ensure output folders exist
+for folder in [OUTPUT_FOLDER_CSV, OUTPUT_FOLDER_VIS]:
+    folder.mkdir(parents=True, exist_ok=True)
+
 # Running cycling dataset
-cycling_df = pd.read_csv(
-    r'..\..\csv tables\prediction_data.csv', low_memory=False)
+cycling_df = pd.read_csv(DATA_PATH, low_memory=False)
 
 # Selecting relevant columns from dataframe
 selected_columns = cycling_df[[
@@ -38,14 +50,17 @@ for col in cols_to_convert:
     selected_columns_english[col] = selected_columns_english[col].astype(int)
 
 # Save to csv
-selected_columns_english.to_csv(r'..\csv tables.csv\cycling.csv', index=False)
+output_csv_path = OUTPUT_FOLDER_CSV / "cleaned_data_cycling.csv"
+selected_columns_english.to_csv(output_csv_path, index=False)
 
 # -----------------------------------------------------------------------------------------------------------------
 
 # Hypothesis 1: There is significantly more material damage than human damage on asphalt compared to concrete road surfaces. #
 
+# STEP 2: PLOTTING GROUPED BAR GRAPH ANALYSING ABOVE HYPOTHESIS
+
 # Rerun cleaned cycling dataframe
-cycling_df = pd.read_csv(r'..\..\csv tables.csv\cycling.csv', low_memory=False)
+cycling_df = pd.read_csv(CLEANED_DATA_PATH, low_memory=False)
 
 # Printing unique values of the pavement type column
 print(cycling_df['Pavement type'].unique())
@@ -108,11 +123,12 @@ for ax in g.axes.flat:
 
 plt.tight_layout()
 
-# Save bar graph
-plt.savefig(
-    r'..\..\visualisations\Proportion_of_cycling_accidents_by_pavement_type.png')
+# Save grouped bar graph
+plot_path = OUTPUT_FOLDER_VIS / \
+    "Proportion_of_cycling_accidents_by_pavement_type.png"
+plt.savefig(plot_path)
 
-# Conducting a one-sided z-test
+# STEP 3: CONDUCTING A ONE_SIDED Z_TEST AND CDF FUNCTION TO CHECK SIGNIFICANCE
 
 # Aggregate 'special asphalt' and 'asphalt' into a single category
 crash_counts['Pavement Group'] = crash_counts['Pavement Group'].replace(
@@ -155,13 +171,15 @@ nobs = [
 z_stat, p_val = proportions_ztest(count, nobs, alternative='larger')
 print(f"Z-statistic: {z_stat:.4f}, P-value: {p_val:.4f}")
 
-# Calculate CDF-based p-value manually
+# Calculate CDF-based p-value
 manual_p_val = 1 - norm.cdf(z_stat)
 print(f"Manual P-value using CDF: {manual_p_val:.4f}")
 
 # --------------------------------------------------------------------------------------------
 
 # Hypothesis 2: The proportion of severe accidents is higher at intersections than on straight roads. #
+
+# STEP 4: PLOTTING A STACKED BAR GRAPH ANALYSING ABOVE HYPOTHESIS
 
 # Mapping road type codes to names
 road_map = {
@@ -200,17 +218,18 @@ counts['Total'] = counts.sum(axis=1)
 counts_normalized = counts[['Injury', 'Death', 'Material damage']].div(
     counts['Total'], axis=0) * 100  # Convert to %
 
-# Plot stacked bar chart
-# Define deep to seaborn color plalette
-deep = sns.color_palette("deep").as_hex()
+# Define the exact color to plot stacked bar chart
+custom_colors = ['#1f77b4', '#ff7f0e', '#2ca02c']
+
+# Plot chart
 ax = counts_normalized.plot(
     kind='bar',
     stacked=True,
     figsize=(10, 6),
-    color=deep
+    color=custom_colors
 )
 
-# Titles and labels
+# Creating the titles and other labels
 plt.title("Severity of Accidents by Road Type", fontsize=14)
 plt.xlabel("Road Type")
 plt.ylabel("Proportion of Accidents (%)")
@@ -239,5 +258,7 @@ for bar_index, (idx, row) in enumerate(counts_normalized.iterrows()):
 
 plt.tight_layout()
 
-# Save bar graph
-plt.savefig(r'..\..\visualisations\Severity_of_accidents_by_road_type.png')
+# Save stacked bar graph
+plot_path = OUTPUT_FOLDER_VIS / \
+    "Severity_of_accidents_by_road_type.png"
+plt.savefig(plot_path)
