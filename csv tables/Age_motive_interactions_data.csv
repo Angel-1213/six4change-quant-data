@@ -1,0 +1,14 @@
+Margins,Average trips per person per day,Average travel distance per trip (km),Average traveltime per tip (minutes),Average travel distance (km) per day,Travel motives_Commute to and from work,Travel motives_Leisure,Age_18-25 years,Age_25-30 years,Age_30-40 years,Age_6-12 years,Travel motives_Commute to and from work * Age_18-25 years,Travel motives_Commute to and from work * Age_25-30 years,Travel motives_Commute to and from work * Age_30-40 years,Travel motives_Commute to and from work * Age_6-12 years,Travel motives_Leisure * Age_18-25 years,Travel motives_Leisure * Age_25-30 years,Travel motives_Leisure * Age_30-40 years,Travel motives_Leisure * Age_6-12 years
+Waarde,0.08,1.79,12.18,0.1432,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.48,2.69,23.6,1.2912,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Waarde,0.13,2.94,15.27,0.3822,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.12,2.3,13.27,0.27599999999999997,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.52,3.35,22.5,1.7420000000000002,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.19,3.44,16.83,0.6536,1.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.12,1.94,11.5,0.23279999999999998,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.31,3.58,22.47,1.1098000000000001,0.0,1.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Waarde,0.2,3.92,18.23,0.784,1.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.12,1.88,11.47,0.22559999999999997,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.27,4.1,25.83,1.107,0.0,1.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+Waarde,0.17,4.35,19.26,0.7395,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+Waarde,0.13,1.91,11.32,0.2483,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
