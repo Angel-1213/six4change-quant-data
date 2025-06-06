@@ -2,17 +2,17 @@ from pathlib import Path
 import pandas as pd
 import statsmodels.api as sm
 
-print("The Research question being answered is: What travel motive do cyclists in the Netherlands cycle the longest duration for, and how does age influence this?")
-print("The hypothesis being tested is: There is a significant difference in average cycling distance between cycling for leisure and cycling to commute to work.")
+print("RQ C, The Research question being answered is: What travel motive do cyclists in the Netherlands cycle the furthest for, and how does age influence this?")
+print("H C.1, The hypothesis being tested is: There is a significant difference in daily cycling distance between cycling for leisure and cycling to commute to and from work.")
 
 # 1. CONFIGURATION
 # Define all paths upfront
 DATA_PATH = Path(
-    r"..\csv tables\transport_per_motive.csv")
+    r"..\..\csv tables\transport_per_motive.csv")
 OUTPUT_FOLDER_CSV = Path(
-    r"..\csv tables")
+    r"..\..\csv tables")
 OUTPUT_FOLDER_VIS = Path(
-    r"..\visualisations\C.a.1"
+    r"..\..\visualisations\C.1"
     "")
 
 # Ensure output folders exist
@@ -23,7 +23,7 @@ for folder in [OUTPUT_FOLDER_CSV, OUTPUT_FOLDER_VIS]:
 # 2. DATA PROCESSING
 
 def load_and_clean_data(file_path):
-    """Load and clean the raw data"""
+    #Load and clean the raw data
     data = pd.read_csv(file_path)
 
     # Rename columns to english
@@ -123,10 +123,10 @@ def binary_encode_travel_motives(data):
 
 # 3. LINEAR REGRESSION
 def linear_regression(data, y, X):
-    # Define predictors (all one-hot columns starting with 'Travel motives_')
+    # Define predictors (binary motives)
     X = sm.add_constant(data[X]) # Add the binary column for intercept
 
-    # Define response variable
+    # Define response variable, distance
     y = data[y]
 
     # Add constant to the model (for intercept)

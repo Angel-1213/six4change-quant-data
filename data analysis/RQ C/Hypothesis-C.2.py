@@ -6,21 +6,21 @@ import statsmodels.api as sm
 from sklearn.preprocessing import OneHotEncoder
 from itertools import product
 
+print("RQ C, The Research question being answered is: What travel motive do cyclists in the Netherlands cycle the furthest for, and how does age influence this?")
+print("The hypothesis bein tested is: H C.2: The relationship between travel motive and daily distance cycled differs significantly across age groups.")
+
 # 1. CONFIGURATION
 # Define all paths upfront
 DATA_PATH = Path(
-    r"..\csv tables\transport_per_motive.csv")
+    r"..\..\csv tables\transport_per_motive.csv")
 OUTPUT_FOLDER_CSV = Path(
-    r"..\csv tables")
+    r"..\..\csv tables")
 OUTPUT_FOLDER_VIS = Path(
-    r"..\visualisations\C.a.2")
+    r"..\..\visualisations\C.2")
 
 # Ensure output folders exist
 for folder in [OUTPUT_FOLDER_CSV, OUTPUT_FOLDER_VIS]:
     folder.mkdir(parents=True, exist_ok=True)
-
-print("The Research question being answered is: What travel motive do cyclists in the Netherlands cycle the longest duration for, and how does age influence this?")
-print("The hypothesis is: H C.a.2: The relationship between travel motive and duration of a cycling trip differs across age groups.")
 
 # 2. DATA PROCESSING
 
@@ -115,7 +115,7 @@ def one_hot_encode(data, column1, column2, categories_to_keep):
 
     one_hot_encoded = encoder.fit_transform(data_filtered[[column1, column2]]) # Fit the encder to the data and transform it
 
-     # Create DataFrame of encoded columns
+    # Create DataFrame of encoded columns
     one_hot_df = pd.DataFrame(
         one_hot_encoded,
         columns=encoder.get_feature_names_out([column1, column2]),
@@ -181,15 +181,17 @@ def plot_pvalues(model, significance_level=0.05):
     })
 
     # Plot
+    
     plt.figure(figsize=(10, 6))
     sns.barplot(data=df_pvals, y='Variable', x='Coefficient', hue='Significant', dodge=False, palette={True: 'green', False: 'red'})
-    plt.axvline(significance_level, color='black', linestyle='--', label=f'α = {significance_level}')
+    plt.axvline(0, color='grey', linestyle='-', label='Zero Line')
     plt.xlabel('Coefficient Value')
     plt.title('Coefficients of Regression Model')
     plt.legend(title='Statistically Significant')
     plt.tight_layout()
-    plt.savefig(OUTPUT_FOLDER_VIS / 'hyp_C.a.2.regression_significance.png')
+    plt.savefig(OUTPUT_FOLDER_VIS / 'hyp_C.2.regression_significance.png')
     plt.show()
+
 
 # EXECUTION
 

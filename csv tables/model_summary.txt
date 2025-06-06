@@ -1,0 +1,21 @@
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:             CrashCount   No. Observations:                   17
+Model:                            GLM   Df Residuals:                       11
+Model Family:                 Poisson   Df Model:                            5
+Link Function:                    Log   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -8538.4
+Date:                Fri, 06 Jun 2025   Deviance:                       16983.
+Time:                        02:05:20   Pearson chi2:                 1.93e+04
+No. Iterations:                     6   Pseudo R-squ. (CS):              1.000
+Covariance Type:            nonrobust                                         
+===============================================================================================================================
+                                                                  coef    std err          z      P>|z|      [0.025      0.975]
+-------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                       5.4424      0.068     79.874      0.000       5.309       5.576
+C(Intersection_Name)[T.4-way intersection]                      1.6741      0.076     22.022      0.000       1.525       1.823
+C(Intersection_Name)[T.Straight road]                           1.8863      0.075     25.182      0.000       1.740       2.033
+Q("Speed limit")                                                0.0054      0.001      3.815      0.000       0.003       0.008
+C(Intersection_Name)[T.4-way intersection]:Q("Speed limit")    -0.0225      0.002    -14.487      0.000      -0.025      -0.019
+C(Intersection_Name)[T.Straight road]:Q("Speed limit")         -0.0242      0.002    -15.668      0.000      -0.027      -0.021
+===============================================================================================================================

@@ -1,0 +1,88 @@
+<table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>    <td>Average travel distance (km) per day</td> <th>  R-squared:         </th> <td>   0.993</td>
+</tr>
+<tr>
+  <th>Model:</th>                             <td>OLS</td>                 <th>  Adj. R-squared:    </th> <td>   0.980</td>
+</tr>
+<tr>
+  <th>Method:</th>                       <td>Least Squares</td>            <th>  F-statistic:       </th> <td>   75.39</td>
+</tr>
+<tr>
+  <th>Date:</th>                       <td>Fri, 06 Jun 2025</td>           <th>  Prob (F-statistic):</th> <td>8.11e-05</td>
+</tr>
+<tr>
+  <th>Time:</th>                           <td>00:37:13</td>               <th>  Log-Likelihood:    </th> <td>  29.313</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>                <td>    16</td>                <th>  AIC:               </th> <td>  -36.63</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>                    <td>     5</td>                <th>  BIC:               </th> <td>  -28.13</td>
+</tr>
+<tr>
+  <th>Df Model:</th>                        <td>    10</td>                <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>                <td>nonrobust</td>              <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+                                <td></td>                                  <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>const</th>                                                        <td>    0.2469</td> <td>    0.028</td> <td>    8.727</td> <td> 0.000</td> <td>    0.174</td> <td>    0.320</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work</th>                      <td>    0.3439</td> <td>    0.075</td> <td>    4.595</td> <td> 0.006</td> <td>    0.152</td> <td>    0.536</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure</th>                                       <td>    1.1571</td> <td>    0.075</td> <td>   15.461</td> <td> 0.000</td> <td>    0.965</td> <td>    1.350</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work * Age_12 tot 18 jaar</th> <td>   -0.2086</td> <td>    0.098</td> <td>   -2.129</td> <td> 0.087</td> <td>   -0.460</td> <td>    0.043</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work * Age_18 tot 25 jaar</th> <td>    0.0628</td> <td>    0.098</td> <td>    0.641</td> <td> 0.550</td> <td>   -0.189</td> <td>    0.315</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work * Age_25 tot 30 jaar</th> <td>    0.1932</td> <td>    0.098</td> <td>    1.972</td> <td> 0.106</td> <td>   -0.059</td> <td>    0.445</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work * Age_30 tot 40 jaar</th> <td>    0.1487</td> <td>    0.098</td> <td>    1.517</td> <td> 0.190</td> <td>   -0.103</td> <td>    0.401</td>
+</tr>
+<tr>
+  <th>Travel motives_Commute to and from work * Age_6 tot 12 jaar</th>  <td> 9.253e-17</td> <td> 2.34e-17</td> <td>    3.949</td> <td> 0.011</td> <td> 3.23e-17</td> <td> 1.53e-16</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure * Age_12 tot 18 jaar</th>                  <td>    0.3380</td> <td>    0.098</td> <td>    3.449</td> <td> 0.018</td> <td>    0.086</td> <td>    0.590</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure * Age_18 tot 25 jaar</th>                  <td>   -0.2942</td> <td>    0.098</td> <td>   -3.002</td> <td> 0.030</td> <td>   -0.546</td> <td>   -0.042</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure * Age_25 tot 30 jaar</th>                  <td>   -0.2970</td> <td>    0.098</td> <td>   -3.031</td> <td> 0.029</td> <td>   -0.549</td> <td>   -0.045</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure * Age_30 tot 40 jaar</th>                  <td>         0</td> <td>        0</td> <td>      nan</td> <td>   nan</td> <td>        0</td> <td>        0</td>
+</tr>
+<tr>
+  <th>Travel motives_Leisure * Age_6 tot 12 jaar</th>                   <td>   -0.1128</td> <td>    0.098</td> <td>   -1.151</td> <td> 0.302</td> <td>   -0.365</td> <td>    0.139</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td> 9.220</td> <th>  Durbin-Watson:     </th> <td>   2.000</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.010</td> <th>  Jarque-Bera (JB):  </th> <td>  11.146</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.186</td> <th>  Prob(JB):          </th> <td> 0.00380</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 7.072</td> <th>  Cond. No.          </th> <td>     inf</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is      0. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
